@@ -1,0 +1,75 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --muted: #9ca3af;
+  --text: #e5e7eb;
+  --brand: #60a5fa;
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --bad: #f87171;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #0b1025);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+.container {
+  max-width: 980px; margin: 40px auto; padding: 0 20px;
+}
+
+.header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 18px;
+}
+
+.title { font-size: 22px; font-weight: 700; }
+.subtitle { color: var(--muted); font-size: 14px; }
+
+.card {
+  background: var(--card); 
+  border-radius: 14px; padding: 16px; box-shadow: 0 0 0 1px #0b1025 inset;
+}
+
+.grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 360px 1fr; }
+}
+
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+
+.input, .textarea, .select {
+  width: 100%; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: #0b122a; color: var(--text);
+}
+.textarea { min-height: 110px; resize: vertical; }
+
+.button {
+  background: var(--brand); color: #0b1025; border: none; font-weight: 700;
+  padding: 10px 14px; border-radius: 12px; cursor: pointer;
+}
+.button[disabled] { opacity: .7; cursor: not-allowed; }
+
+.status-list { display: flex; flex-direction: column; gap: 10px; }
+.status-item {
+  background: #0b122a; border: 1px solid var(--border); border-radius: 12px; padding: 12px;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: 999px;
+  font-size: 12px; border: 1px solid var(--border); background: #0a1023; color: var(--muted);
+}
+.badge.ok { color: var(--ok); border-color: #0f2c22; background: #081713; }
+.badge.warn { color: var(--warn); border-color: #3b2f07; background: #120e05; }
+.badge.bad { color: var(--bad); border-color: #3b0e0e; background: #160707; }
+
+.kv { display: grid; grid-template-columns: 160px 1fr; gap: 8px; font-size: 14px; color: var(--muted); }
+.kv strong { color: var(--text); font-weight: 600; }
+
+.footer-note { color: var(--muted); font-size: 12px; margin-top: 12px; }
+.small { font-size: 12px; color: var(--muted); }
